@@ -8,7 +8,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 
-export default () => (
+const Login = () => (
     <Grid centered columns={2}>
         <Grid.Column>
             <Header as="h2" textAlign="center">
@@ -41,3 +41,5 @@ export default () => (
         </Grid.Column>
     </Grid>
 );
+
+export default Login;
