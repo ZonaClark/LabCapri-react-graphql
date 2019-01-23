@@ -2,8 +2,8 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
-import Loading from '../Loading';
-import Link from '../Elements/Link';
+import Loading from '../../Components/Loading';
+import Link from '../../Components/Link';
 
 const GET_FIRST_IMAGE = gql`
 {

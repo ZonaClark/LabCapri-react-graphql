@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { Container } from 'semantic-ui-react';
 
-import Profile from './Profile';
+import Login from './Containers/Login';
+import Profile from './Containers/Profile';
+import Menu from './Containers/Menu';
 
 class App extends Component {
   render() {
-    return <Profile />;
+    return (
+      <Fragment>
+        <Menu />
+        <Container>
+          <Login />
+        </Container>
+      </Fragment>
+    );
   }
 }
 
