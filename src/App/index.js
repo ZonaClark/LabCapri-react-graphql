@@ -6,6 +6,8 @@ import Home from './Containers/Home';
 import Login from './Containers/Login';
 import Error from './Containers/Error';
 import Menu from './Containers/Menu';
+import Register from './Containers/Register';
+import Profile from './Containers/Profile';
 
 class App extends Component {
   render() {
@@ -16,6 +18,8 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
+            <Route path="/register" component={Register} />
+            <Route path="/profile" component={Profile} />
             <Route component={Error} />
           </Switch>
         </div>

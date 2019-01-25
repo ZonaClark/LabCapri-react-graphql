@@ -4,10 +4,11 @@ import { Query } from 'react-apollo';
 
 import Loading from '../../Components/Loading';
 import Link from '../../Components/Link';
+import ErrorMessage from '../../Components/Error';
 
 const GET_FIRST_IMAGE = gql`
 {
-    images(limit: 2) {
+    images(limit: 5) {
         edges {
             id
             user {
@@ -26,16 +27,16 @@ const GET_FIRST_IMAGE = gql`
 
 const Profile = () => (
     <Query query={GET_FIRST_IMAGE}>
-        {({ data, loading }) => {
+        {({ data, loading, error }) => {
+          if (error) {
+            return <ErrorMessage error={error} />;
+          }
           const { images } = data;
           if (loading || !images) {
             return <Loading />;
           }
-
           return (
-              <div>
-                  {images.edges[0].diagnosis}
-              </div>
+            <div>{images.edges[2].diagnosis}</div>
           );
         }}
     </Query>

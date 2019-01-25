@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import {
   Button,
   Form,
@@ -18,7 +19,7 @@ const Login = () => (
                 <Form size="large">
                     <Form.Input
                         fluid
-                        icon="user"
+                        icon="mail"
                         iconPosition="left"
                         placeholder="Email address"
                     />
@@ -36,7 +37,7 @@ const Login = () => (
                 </Form>
             </Segment>
             <Message>
-                Not registered yet? <a herf="#">Sign Up</a>
+                Not registered yet? <NavLink to="/register">Sign Up</NavLink>
             </Message>
         </Grid.Column>
     </Grid>

@@ -16,11 +16,10 @@ export default () => (
 
             <Menu.Menu position="right">
                 <Menu.Item as={NavLink} to="/login" name="login">
-                    Login
+                    Login/Register
                 </Menu.Item>
-
-                <Menu.Item as="a" name="login">
-                    Sign Up
+                <Menu.Item as={NavLink} to="/profile" name="profile">
+                    Profile
                 </Menu.Item>
             </Menu.Menu>
         </Container>
