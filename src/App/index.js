@@ -1,5 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import { Container } from 'semantic-ui-react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './Containers/Home';

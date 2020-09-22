@@ -18,13 +18,16 @@ const httpLink = new HttpLink({
   uri: LC_BASE_URL,
 });
 
-// const errorLink = onError(({ graphQLErrors, networkError }) => {
-//   if (graphQLErrors) {
-//     graphQLErrors.map(({ message, locations, path }) =>
-//       console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`),);
-//   }
-//   // TODO: add additional error handling for Network Error
-// });
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    graphQLErrors.map(({ message, locations, path }) =>
+      console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+      )
+    );
+  }
+  // TODO: add additional error handling for Network Error
+});
 
 // Middleware for adding authentication token to every query
 const authMiddleware = new ApolloLink((operation, forward) => {
@@ -53,7 +56,7 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // Use hot module replacement
